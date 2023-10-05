@@ -109,8 +109,8 @@ if (!isset($_SESSION['login'])) {
                         img.height = '24';
 
                         // append the tag to our document body
-                        // set elm value to emoji
-                        elm.value = emoji;
+                        elm.textContent = '';
+                        elm.appendChild(img);
                     }
                 })
             };
