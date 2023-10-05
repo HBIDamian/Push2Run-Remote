@@ -1,0 +1,45 @@
+body {
+    background-color: black !important;
+    color:black !important;
+}
+
+button[name="selectFunction"] {
+    color: rgb(0, 0, 0) !important;
+    border-color: black;
+    font-size: large;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+}
+
+/* table.buttons{
+    opacity: 0;
+} */
+
+td{
+        padding: 1% !important;
+}
+
+.blue {
+    background-color: #1489b4 !important;
+}
+
+.green {
+    background-color: #2e9c5f !important;
+}
+
+.red {
+    background-color: #ff3d3d !important;
+}
+
+.orange {
+    background-color: #ff9f50 !important;
+}
+.btn:hover {
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}

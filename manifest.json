@@ -1,0 +1,17 @@
+{
+    "name": "Push2Run DamianPC",
+    "short_name": "DamianPC",
+    "start_url": "index.php",
+    "scope": "./",
+    "icons": [
+        {
+            "src": "assets/images/android-chrome-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "orientation": "portrait-primary",
+    "display": "fullscreen"
+}

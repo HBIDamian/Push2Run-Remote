@@ -1,0 +1,14 @@
+<?php
+    $username = 'EnterUsernameHere';
+    // Password for the login page.
+    // https://onlinephp.io/password-hash can be used to generate a new password.
+    $hashedPassword = '$XXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+
+    // PushBullet
+    $pushBulletTitle = "Push2Run MyPC";
+    $pushBulletAuth = "o.XXXXXXXXXXXXXXXXXXXXXXXXX";
+
+    // Debug mode enables the test button,
+    // as well as disabling automatic redirect.
+    $debugMode = false;
+?>
