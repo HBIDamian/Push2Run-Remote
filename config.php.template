@@ -8,7 +8,14 @@
     $pushBulletTitle = "Push2Run MyPC";
     $pushBulletAuth = "o.XXXXXXXXXXXXXXXXXXXXXXXXX";
 
-    // Debug mode enables the test button,
-    // as well as disabling automatic redirect.
+
+    // ADVANCED SETTINGS
+    // Best leave these alone unless you know what you're doing.
+
+    // Number of columns to display the buttons in.
+    // Best leave it as 3, unless you intend to style the website yourself.
+    $columnLength = 3;
+
+    // Debug mode enables the test button, as well as disabling automatic redirect.
     $debugMode = false;
 ?>

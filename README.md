@@ -35,10 +35,35 @@ Follow the instructions in this order, and nothing shall go wrong.
 And We're all done with the initial setup. 
 
 ## What next? 
-It's entirely up to you what you want to add. 
+It's entirely up to you what you want to add.
 
 To Add commands to Push2Run, follow [This Link](https://push2run.com/help/help_v4.8.0.0.html) to get started. 
 
-When you add a command, make sure the command you wrote in the `Listen For` section of the `Add/Change` dialog matches the value of the buttons you made. 
+When you add a command, make sure the command you wrote in the `Listen For` section of the `Add/Change` dialog matches the value of the buttons you made in buttons.json. 
 
-Make sure to add value of the buttons you made within `embed.php`'s `$allowedValues` array. This array exists so no one can run other commands you may not wish to run on the website.
+### Buttons.json
+This is where you can add buttons to the website.
+
+Example:
+```json
+[
+    {
+        "ButtonName": "Button 1",
+        "ButtonColour": "red"
+    },
+    {
+        "ButtonName": "Button 2",
+        "ButtonColour": "green"
+    }
+]
+```
+The `ButtonName` is the name of the button that will appear on the website, and should match the command you wrote in the `Listen For` section of the `Add/Change` dialog in Push2Run.
+
+The only default colours are `blue`, `green`, `red`, `orange`, `purple`, `yellow`, `white`, `black`, `grey`, `pink`, `brown`. Although you can add your own colours by adding the colour to the `main.css` file.
+
+## Credits
+- [Push2Run](https://push2run.com/) - Push2Run is a free program that lets you control your PC or Laptop from anywhere using your voice or your Android phone or tablet.
+- [Pushbullet](https://www.pushbullet.com/) - Pushbullet connects your devices, making them feel like one.
+- [Twemoji](https://twemoji.twitter.com/) - Twemoji is an open source emoji project, created and owned by Twitter. Emojis from Twemoji are found on the Twitter.com website, TweetDeck, Twitter for Android, Discord, Roblox and other apps.
+- [Bootstrap](https://getbootstrap.com/) - Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
+- The round background - The design of the round background was created by [fghty on CodePen](https://codepen.io/fghty/pen/PojKNEG).

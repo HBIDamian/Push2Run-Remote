@@ -35,6 +35,32 @@ td{
 .orange {
     background-color: #ff9f50 !important;
 }
+
+.purple {
+    background-color: #a85fa8 !important;
+}
+
+.yellow {
+    background-color: #f9d423 !important;
+}
+
+.white {
+    background-color: #ffffff !important;
+}
+
+.black {
+    background-color: #000000 !important;
+    color: white !important;
+}
+
+.gray {
+    background-color: #808080 !important;
+}
+
+.brown {
+    background-color: #51301b !important;
+}
+
 .btn:hover {
     -webkit-filter: brightness(70%);
     -webkit-transition: all 0.25s ease;

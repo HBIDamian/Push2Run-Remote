@@ -1,0 +1,74 @@
+[
+    {
+        "ButtonName": null,
+        "ButtonColour": null
+    },
+    {
+        "ButtonName": "📂",
+        "ButtonColour": "green"
+    },
+    {
+        "ButtonName": null,
+        "ButtonColour": null
+    },
+    {
+        "ButtonName": "Shutdown",
+        "ButtonColour": "red"
+    },
+    {
+        "ButtonName": "Restart",
+        "ButtonColour": "red"
+    },
+    {
+        "ButtonName": "Logout",
+        "ButtonColour": "red"
+    },
+    {
+        "ButtonName": "Sleep",
+        "ButtonColour": "orange"
+    },
+    {
+        "ButtonName": "Hibernate",
+        "ButtonColour": "orange"
+    },
+    {
+        "ButtonName": "Lock",
+        "ButtonColour": "orange"
+    },
+    {
+        "ButtonName": "🔉",
+        "ButtonColour": "blue"
+    },
+    {
+        "ButtonName": "🔇",
+        "ButtonColour": "blue"
+    },
+    {
+        "ButtonName": "🔊",
+        "ButtonColour": "blue"
+    },
+    {
+        "ButtonName": "⏪",
+        "ButtonColour": "blue"
+    },
+        {
+        "ButtonName": "⏯️",
+        "ButtonColour": "blue"
+    },
+    {
+        "ButtonName": "⏩",
+        "ButtonColour": "blue"
+    },
+    {
+        "ButtonName": "Spotify",
+        "ButtonColour": "green"
+    },
+    {
+        "ButtonName": "Screenshot",
+        "ButtonColour": "green"
+    },
+    {
+        "ButtonName": "Surfshark",
+        "ButtonColour": "green"
+    }
+]

@@ -12,6 +12,7 @@
 <?php
 session_start();
 require_once('config.php');
+$buttonsArray = json_decode(file_get_contents('buttons.json'), true);
 
 if ((!isset($_SESSION['choButton'])) && (!isset($_SESSION['username']))) {
     die("<h1 style=\"text-align: center;\">This isn't the page you are looking for! </h1><img style=\"display: block; margin-left: auto; margin-right: auto;\" height=\"40%\" src=\"https://i.kym-cdn.com/photos/images/original/000/915/056/50e.jpg\">");
@@ -19,35 +20,12 @@ if ((!isset($_SESSION['choButton'])) && (!isset($_SESSION['username']))) {
 
 $sessionUsername = $_SESSION['username']; // loggedIn.php
 $button = $_SESSION['choButton']; // loggedIn.php
-$allowedValues = [
-    'Wake Up',
-    'Shutdown',
-    'Restart',
-    'Sleep',
-    'Logout',
-    'Sleep',
-    'Hibernate',
-    '🔉',
-    '🔇',
-    '🔊',
-    '⏯️',
-    '⏪',
-    '⏩',
-    '☀',
-    '🌒',
-    '🌖',
-    '❄',
-    '🔥',
-    '‎',
-    '💡',
-    'Spotify',
-    'Screenshot',
-    'Surfshark',
-    'test'
-];
+// allowed values are the button names within the buttons.json file
+$allowedValues = array_column($buttonsArray, 'ButtonName');
 
 if ($sessionUsername == $username) {
-    if (in_array($button, $allowedValues)) {
+// if button is in the allowed values array
+if (in_array($button, $allowedValues)) {
         $curl = curl_init('https://api.pushbullet.com/v2/pushes');
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
