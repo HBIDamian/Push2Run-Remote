@@ -7,6 +7,9 @@ if (isset($_SESSION['login'])) {
     header('LOCATION: loggedIn.php');
     die();
 }
+if (!$autoFillUsername == true) {
+    $username = "";
+}
 ?>
 <!DOCTYPE html>
 <html>

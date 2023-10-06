@@ -1,7 +1,11 @@
 <?php
+    // User to login with.
     $username = 'EnterUsernameHere';
+	// Autofill username: true/false
+    $autoFillUsername = false;
+
     // Password for the login page.
-    // https://onlinephp.io/password-hash can be used to generate a new password.
+    // https://bcrypt-generator.com/.
     $hashedPassword = '$XXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
 
     // PushBullet
@@ -18,4 +22,9 @@
 
     // Debug mode enables the test button, as well as disabling automatic redirect.
     $debugMode = false;
+	
+	if ($_SERVER['REMOTE_ADDR'] != '127.0.0.1' && end(explode('/', $_SERVER["PHP_SELF"])) == 'config.php') {
+        header('HTTP/1.0 403 Forbidden');
+        die();
+    }
 ?>
