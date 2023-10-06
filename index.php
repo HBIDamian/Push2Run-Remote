@@ -7,8 +7,9 @@ if (isset($_SESSION['login'])) {
     header('LOCATION: loggedIn.php');
     die();
 }
+$usernameAutofill = $username;
 if (!$autoFillUsername == true) {
-    $username = "";
+    $usernameAutofill = "";
 }
 ?>
 <!DOCTYPE html>
@@ -40,11 +41,11 @@ if (!$autoFillUsername == true) {
     </div>
     <?php
     if (isset($_POST['submit'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        if ($username === 'damian' && password_verify($password, $hashedPassword)) {
+        $inputUsername = strtolower($_POST['username']);
+        $inputPassword = $_POST['password'];
+        if ($inputUsername == strtolower($username) && password_verify($inputPassword, $hashedPassword)) {
             $_SESSION['login'] = true;
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $inputUsername;
             header('Location: ./loggedIn.php');
             die();
         } else {
@@ -55,7 +56,7 @@ if (!$autoFillUsername == true) {
     <form action="" method="post">
         <h3>Login Here</h3>
         <label for="username">Username</label>
-        <input type="text" name="username" value="<?php echo ($username) ?>" placeholder="Email or Phone" id="username">
+        <input type="text" name="username" value="<?php echo ($usernameAutofill) ?>" placeholder="Email or Phone" id="username">
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Password" required>
         <button type="submit" name="submit">Log In</button>
