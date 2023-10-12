@@ -12,7 +12,15 @@
 <?php
 session_start();
 require_once('config.php');
+if ($debugMode != false) {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    ini_set('error_reporting', E_ALL);
+    error_reporting(E_ALL);
+}
 $buttonsArray = json_decode(file_get_contents('buttons.json'), true);
+
+
 
 if ((!isset($_SESSION['choButton'])) && (!isset($_SESSION['username']))) {
     die("<h1 style=\"text-align: center;\">This isn't the page you are looking for! </h1><img style=\"display: block; margin-left: auto; margin-right: auto;\" height=\"40%\" src=\"https://i.kym-cdn.com/photos/images/original/000/915/056/50e.jpg\">");
@@ -22,6 +30,8 @@ $sessionUsername = $_SESSION['username']; // loggedIn.php
 $button = $_SESSION['choButton']; // loggedIn.php
 // allowed values are the button names within the buttons.json file
 $allowedValues = array_column($buttonsArray, 'ButtonName');
+// allowedValues and "test"
+array_push($allowedValues, "test");
 
 if ($sessionUsername == $username) {
 // if button is in the allowed values array
@@ -53,7 +63,10 @@ if ($debugMode != true) {
 ?>
     <span style="color: white !important;">
         <?php
+        echo "Response: ";
         print_r($response);
+        echo "<br><br>";
+        echo "Button:<br>";
         var_dump($button);
         ?>
     </span>
