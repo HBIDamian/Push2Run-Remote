@@ -20,8 +20,6 @@ if ($debugMode != false) {
 }
 $buttonsArray = json_decode(file_get_contents('buttons.json'), true);
 
-
-
 if ((!isset($_SESSION['choButton'])) && (!isset($_SESSION['username']))) {
     die("<h1 style=\"text-align: center;\">This isn't the page you are looking for! </h1><img style=\"display: block; margin-left: auto; margin-right: auto;\" height=\"40%\" src=\"https://i.kym-cdn.com/photos/images/original/000/915/056/50e.jpg\">");
 }
@@ -37,7 +35,6 @@ if ($sessionUsername == $username) {
 // if button is in the allowed values array
 if (in_array($button, $allowedValues)) {
         $curl = curl_init('https://api.pushbullet.com/v2/pushes');
-
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
