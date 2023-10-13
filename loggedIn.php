@@ -12,9 +12,14 @@
 <?php
 ob_start();
 session_start();
-
 // import config
 require_once('config.php');
+if ($debugMode != false) {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    ini_set('error_reporting', E_ALL);
+    error_reporting(E_ALL);
+}
 $buttonsArray = json_decode(file_get_contents('buttons.json'), true);
 
 if (!isset($_SESSION['login'])) {
@@ -57,7 +62,7 @@ if (!isset($_SESSION['login'])) {
                 </tbody>
             </table>
                     <?php
-                    if ($debugMode == true) {
+                    if ($debugMode !== false) {
                     ?>
                         <tr>
                             <td>&nbsp;</td>

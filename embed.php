@@ -28,23 +28,32 @@ $sessionUsername = $_SESSION['username']; // loggedIn.php
 $button = $_SESSION['choButton']; // loggedIn.php
 // allowed values are the button names within the buttons.json file
 $allowedValues = array_column($buttonsArray, 'ButtonName');
-// allowedValues and "test"
 array_push($allowedValues, "test");
 
 if ($sessionUsername == $username) {
 // if button is in the allowed values array
 if (in_array($button, $allowedValues)) {
         $curl = curl_init('https://api.pushbullet.com/v2/pushes');
+        // set header as json
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, [
-            'Authorization: Bearer ' . $pushBulletAuth,
-        ]);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        'Authorization: Bearer ' . $pushBulletAuth,
+        'Accept: application/json'
+      ));
         curl_setopt($curl, CURLOPT_POSTFIELDS, [
             "type" => "note",
             "title" => $pushBulletTitle,
-            "body" => "\"" . $button . "\""
+            "body" => "\"" . $button . "\"",
+            "receiver_email" => $pushBulletEmail,
+            "receiver_email_normalized" => $pushBulletEmail,
+            "direction" => "self"
         ]);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_VERBOSE, true);
+        curl_setopt($curl, CURLOPT_HEADER, true);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+
 
         // // UN-COMMENT TO BYPASS THE SSL VERIFICATION IF YOU DON'T HAVE THE CERT BUNDLE (NOT RECOMMENDED).
         // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
@@ -60,6 +69,12 @@ if ($debugMode != true) {
 ?>
     <span style="color: white !important;">
         <?php
+    // display full curl object
+        echo "Curl: ";
+        $rawCurl = curl_getinfo($curl);
+        print_r($rawCurl);
+        echo "<br><br>";
+    
         echo "Response: ";
         print_r($response);
         echo "<br><br>";
