@@ -61,11 +61,16 @@ Example:
 ```
 The `ButtonName` is the name of the button that will appear on the website, and should match the command you wrote in the `Listen For` section of the `Add/Change` dialog in Push2Run.
 
-The only default colours are `blue`, `green`, `red`, `orange`, `purple`, `yellow`, `white`, `black`, `grey`, `pink`, `brown`. Although you can add your own colours by adding the colour to the `main.css` file.
+The default colours are `blue`, `green`, `red`, `orange`, `purple`, `yellow`, `white`, `black`, `grey`, `pink`, `brown`. However, you can add your own colours by adding the colour to the `main.css` file.
+
+## TODO:
+- [ ] Try to debug the Push Bullet issue with the title variable not passing through.
+- [ ] Add MQTT compatibility.
+- [ ] Tidy up a lil bit. It's a wee bit messy now.
 
 ## Credits
 - [Push2Run](https://push2run.com/) - Push2Run is a free program that lets you control your PC or Laptop from anywhere using your voice or your Android phone or tablet.
 - [Pushbullet](https://www.pushbullet.com/) - Pushbullet connects your devices, making them feel like one.
-- [Twemoji](https://twemoji.twitter.com/) - Twemoji is an open source emoji project, created and owned by Twitter. Emojis from Twemoji are found on the Twitter.com website, TweetDeck, Twitter for Android, Discord, Roblox and other apps.
+- [Twemoji](https://twemoji.twitter.com/) - Twemoji is an open-source emoji project, created and owned by Twitter. Emojis from Twemoji are found on the Twitter.com website, TweetDeck, Twitter for Android, Discord, Roblox and other apps.
 - [Bootstrap](https://getbootstrap.com/) - Bootstrap is an open source toolkit for developing with HTML, CSS, and JS.
 - The round background - The design of the round background was created by [fghty on CodePen](https://codepen.io/fghty/pen/PojKNEG).
